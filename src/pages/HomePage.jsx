@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchTrendingMovies } from '../services/TMDB.API';
 import { toast } from 'react-toastify';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -30,7 +31,10 @@ const HomePage = () => {
   return (
     <div>
       <h1>Trending today</h1>
-      
+      {error && (
+        <p>Whoops, something went wrong: {error}</p>
+      )}
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </div>
   );
 };
