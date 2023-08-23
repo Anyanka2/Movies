@@ -3,6 +3,7 @@ import axios from 'axios';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const TREND_URL = `${BASE_URL}/trending/movie/day`;
 const SEARCH_URL = `${BASE_URL}/search/movie`;
+export const IMG_URL = `https://image.tmdb.org/t/p/w500`;
 
 const API_KEY = '6b52787bc9253c3dcb102231856ebbf2';
 

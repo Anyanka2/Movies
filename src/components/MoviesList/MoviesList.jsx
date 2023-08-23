@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { MovieCard } from 'components/MovieCard/MovieCard';
 
 export const MoviesList = ({ movies }) => {
   return (
     <ul>
       {movies.map(({ id, poster_path, title }) => (
-        <li key={id} poster_path={poster_path} title={title} id={id}></li>
+        <MovieCard
+          key={id}
+          poster_path={poster_path}
+          title={title}
+          id={id}
+        ></MovieCard>
       ))}
     </ul>
   );
