@@ -43,7 +43,6 @@ const MoviesPage = () => {
   }, [searchQuery]);
   return (
     <div>
-      yeee
       <SearchForm onSubmit={onSubmit} />
       {error && (
         <p className="errorMessage">Whoops, something went wrong: {error}</p>

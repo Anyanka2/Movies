@@ -21,9 +21,6 @@ export const SearchForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <button type="submit">
-        <span>Search</span>
-      </button>
       <input
         type="text"
         autoComplete="off"
@@ -33,6 +30,9 @@ export const SearchForm = ({ onSubmit }) => {
         value={inputValue}
         onChange={handleChange}
       />
+      <button type="submit">
+        <span>Search</span>
+      </button>
     </form>
   );
 };
