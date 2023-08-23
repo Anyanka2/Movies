@@ -30,12 +30,12 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <h1>Trending today</h1>
       {error && <p>Whoops, something went wrong: {error}</p>}
       {movies.length > 0 && <MoviesList movies={movies} />}
       {isLoading && <Loader />}
-    </div>
+    </>
   );
 };
 

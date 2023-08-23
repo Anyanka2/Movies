@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import { Loader } from 'components/Loader/Loader';
 import {
@@ -10,6 +10,9 @@ import {
   useParams,
 } from 'react-router-dom';
 import { fetchMovieDetails, IMG_URL } from 'services/TMDB.API';
+
+const CastPage = lazy(() => import('components/Cast/Cast'));
+const ReviewsPage = lazy(() => import('components/Reviews/Reviews'));
 
 const MovieDetails = () => {
   const [movieDet, setMovieDet] = useState(null);
@@ -47,7 +50,7 @@ const MovieDetails = () => {
   const releaseYear = release_date ? release_date.split('-')[0] : '';
 
   return (
-    <div>
+    <>
       {error && <p>Whoops, something went wrong: {error}</p>}
       {isLoading && <Loader />}
       {movieDet && (
@@ -58,7 +61,7 @@ const MovieDetails = () => {
           <div>
             <div>
               <img
-                src={poster_path ? `${IMG_URL}${poster_path}` : `${IMG_URL}`}
+                src={poster_path ? `${IMG_URL}${poster_path}` : `https://img.freepik.com/premium-vector/funny-angry-grumpy-black-cat-watercolor-vector_878932-39.jpg?size=626&ext=jpg&ga=GA1.1.2050841542.1692818493&semt=ais`}
                 alt={title}
               />
               <div>
@@ -79,17 +82,17 @@ const MovieDetails = () => {
               <NavLink to="reviews">Reviews</NavLink>
             </div>
             <div>
-              {/* <Suspense fallback={<Loader />}>
+              <Suspense fallback={<Loader />}>
                 <Routes>
                   <Route path="cast" element={<CastPage />} />
                   <Route path="reviews" element={<ReviewsPage />} />
                 </Routes>
-              </Suspense> */}
+              </Suspense>
             </div>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
