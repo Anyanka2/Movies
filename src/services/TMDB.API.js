@@ -5,7 +5,7 @@ const TREND_URL = `${BASE_URL}/trending/movie/day`;
 const SEARCH_URL = `${BASE_URL}/search/movie`;
 export const IMG_URL = `https://image.tmdb.org/t/p/w500`;
 
-const API_KEY = '6b52787bc9253c3dcb102231856ebbf2';
+const API_KEY = '38ec0872f8907a52000e0e854bdd72ed';
 
 const params = {
   params: {
@@ -43,3 +43,4 @@ export const fetchMovieReviews = async movie_id => {
   );
   return data;
 };
+console.log(fetchMovieReviews());
