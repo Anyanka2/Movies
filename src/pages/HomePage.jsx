@@ -34,7 +34,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Header/>
       <TrendingTitle>Trending today</TrendingTitle>
       {error && <TextError>Whoops, something went wrong: {error}</TextError>}
       {movies.length > 0 && <MoviesList movies={movies} />}
