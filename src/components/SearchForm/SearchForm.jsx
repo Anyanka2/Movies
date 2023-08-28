@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
-import { SForm, SearchFormInput, SearchFormButton, SFButtonLabel} from './SearchForm.styled';
+import { SForm, SearchFormInput, SearchFormButton} from './SearchForm.styled';
 
 export const SearchForm = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
