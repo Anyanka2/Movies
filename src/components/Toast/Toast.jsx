@@ -1,7 +1,7 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 
-const ToastContainer = () => {
+const Toast = () => {
   return (
     <>
       <ToastContainer
@@ -20,4 +20,4 @@ const ToastContainer = () => {
   );
 };
 
-export default ToastContainer;
+export default Toast;
