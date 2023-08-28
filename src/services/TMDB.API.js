@@ -43,4 +43,3 @@ export const fetchMovieReviews = async movie_id => {
   );
   return data;
 };
-console.log(fetchMovieReviews());
