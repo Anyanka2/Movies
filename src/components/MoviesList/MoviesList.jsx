@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MovieCard } from 'components/MovieCard/MovieCard';
+import { MovieList } from './MoviesList.styled';
 
 export const MoviesList = ({ movies }) => {
   return (
-    <ul>
+    <MovieList>
       {movies.map(({ id, poster_path, title }) => (
         <MovieCard
           key={id}
@@ -13,7 +14,7 @@ export const MoviesList = ({ movies }) => {
           id={id}
         ></MovieCard>
       ))}
-    </ul>
+    </MovieList>
   );
 };
 

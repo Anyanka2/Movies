@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
+import { SForm, SearchFormInput, SearchFormButton, SFButtonLabel} from './SearchForm.styled';
 
 export const SearchForm = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
@@ -20,20 +21,20 @@ export const SearchForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <SForm onSubmit={handleSubmit}>
+      <SearchFormInput
         type="text"
         autoComplete="off"
         autoFocus
-        placeholder="Enter movie title..."
+        placeholder="Enter movie title"
         required
         value={inputValue}
         onChange={handleChange}
       />
-      <button type="submit">
-        <span>Search</span>
-      </button>
-    </form>
+      <SearchFormButton type="submit">
+        Search
+      </SearchFormButton>
+    </SForm>
   );
 };
 
