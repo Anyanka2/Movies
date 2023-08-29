@@ -26,7 +26,7 @@ export const SearchForm = ({ onSubmit }) => {
         type="text"
         autoComplete="off"
         autoFocus
-        placeholder="Enter movie title"
+        placeholder="Please enter the movie title"
         required
         value={inputValue}
         onChange={handleChange}

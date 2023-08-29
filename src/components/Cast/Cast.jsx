@@ -32,19 +32,20 @@ const Cast = () => {
         <div>
           <h2>Movie Cast</h2>
           <ul>
-            {cast.map(actor => (
-              <li key={actor.id}>
+            {cast.map(({character, id, name, profile_path}) => (
+              <li key={id}>
                 <img
                   width="200px"
                   height="300px"
                   src={
-                    actor.profile_path
-                      ? `${IMG_URL}${actor.profile_path}`
-                      : `https://stock.adobe.com/pl/images/portrait-of-a-surprised-cat-scottish-straight/97589769`
+                    profile_path
+                      ? `${IMG_URL}${profile_path}`
+                      : `https://cdn.pixabay.com/photo/2023/01/08/18/39/cat-7705903_1280.png`
                   }
-                  alt={actor.original_name}
+                  alt={name}
                 />
-                <p>{actor.name}</p>
+                <p>{name}</p>
+                <p>Caracter: {character}</p>
               </li>
             ))}
           </ul>

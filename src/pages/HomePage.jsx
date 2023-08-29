@@ -3,7 +3,6 @@ import { fetchTrendingMovies } from '../services/TMDB.API';
 import { toast } from 'react-toastify';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { Loader } from 'components/Loader/Loader';
-import { Header } from 'components/Header/Header';
 import { Outlet } from 'react-router-dom';
 import { TrendingTitle, TextError } from './Pages.styled';
 
@@ -38,7 +37,7 @@ const HomePage = () => {
       {error && <TextError>Whoops, something went wrong: {error}</TextError>}
       {movies.length > 0 && <MoviesList movies={movies} />}
       {isLoading && <Loader />}
-      <Outlet/>
+      <Outlet />
     </>
   );
 };

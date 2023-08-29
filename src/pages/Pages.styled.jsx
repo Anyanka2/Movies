@@ -1,5 +1,11 @@
 import styled from '@emotion/styled';
 
+export const HomeContainer = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+`;
+
 export const TrendingTitle = styled.h1`
   font-size: 2rem;
   color: #5cabf5;
@@ -8,7 +14,6 @@ export const TrendingTitle = styled.h1`
   display: block;
   text-transform: uppercase;
   text-align: center;
-  
 `;
 export const TextError = styled.p`
   font-size: 25px;
