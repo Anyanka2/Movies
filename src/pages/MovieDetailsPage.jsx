@@ -10,7 +10,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import { fetchMovieDetails, IMG_URL } from 'services/TMDB.API';
-import { Button } from './Pages.styled';
+import { Button, Wrapper, Poster, MovieCard, Info, Title, Header, TextData } from './Pages.styled';
 
 const CastPage = lazy(() => import('components/Cast/Cast'));
 const ReviewsPage = lazy(() => import('components/Reviews/Reviews'));
@@ -55,13 +55,13 @@ const MovieDetails = () => {
       {error && <p>Whoops, something went wrong: {error}</p>}
       {isLoading && <Loader />}
       {movieDet && (
-        <div>
+        <Wrapper>
           <Link to={backLink.current}>
             <Button> Go back </Button>
           </Link>
           <div>
-            <div>
-              <img
+            <MovieCard>
+              <Poster
                 src={
                   poster_path
                     ? `${IMG_URL}${poster_path}`
@@ -69,19 +69,19 @@ const MovieDetails = () => {
                 }
                 alt={title}
               />
-              <div>
-                <h1>
+              <Info>
+                <Title>
                   {title} ({releaseYear})
-                </h1>
-                <h2>User score: {Math.round(vote_average * 10)}%</h2>
-                <p>
-                  Overview <br /> {overview}
-                </p>
-                <h2>Genres:</h2>
-                <p>{genres.map(genre => genre.name).join(' ')}</p>
-              </div>
-            </div>
-            <h2>Additional information</h2>
+                </Title>
+                <Header>User score: {Math.round(vote_average * 10)}%</Header>
+                <TextData>
+                 <b>Overview</b><br/> {overview}
+                </TextData>
+                <Header>Genres:</Header>
+                <TextData>{genres.map(genre => genre.name).join(' ')}</TextData>
+              </Info>
+            </MovieCard>
+            <Header>Additional information</Header>
             <div>
               <NavLink to="cast"><Button>Cast</Button></NavLink>
               <NavLink to="reviews"><Button>Reviews</Button></NavLink>
@@ -95,7 +95,7 @@ const MovieDetails = () => {
               </Suspense>
             </div>
           </div>
-        </div>
+        </Wrapper>
       )}
     </>
   );

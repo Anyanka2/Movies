@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieCast, IMG_URL } from 'services/TMDB.API';
 import { toast } from 'react-toastify';
 import { Loader } from 'components/Loader/Loader';
+import { List, Item } from './Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -31,9 +32,9 @@ const Cast = () => {
       {cast.length !== 0 && (
         <div>
           <h2>Movie Cast</h2>
-          <ul>
+          <List>
             {cast.map(({character, id, name, profile_path}) => (
-              <li key={id}>
+              <Item key={id}>
                 <img
                   width="200px"
                   height="300px"
@@ -46,9 +47,9 @@ const Cast = () => {
                 />
                 <p>{name}</p>
                 <p>Caracter: {character}</p>
-              </li>
+              </Item>
             ))}
-          </ul>
+          </List>
         </div>
       )}
       {cast.length === 0 && <div>We don't have any cast for this movie.</div>}
