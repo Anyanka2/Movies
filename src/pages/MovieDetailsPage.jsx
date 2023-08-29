@@ -10,6 +10,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import { fetchMovieDetails, IMG_URL } from 'services/TMDB.API';
+import { Button } from './Pages.styled';
 
 const CastPage = lazy(() => import('components/Cast/Cast'));
 const ReviewsPage = lazy(() => import('components/Reviews/Reviews'));
@@ -56,7 +57,7 @@ const MovieDetails = () => {
       {movieDet && (
         <div>
           <Link to={backLink.current}>
-            <button />
+            <Button> Go back </Button>
           </Link>
           <div>
             <div>
@@ -82,8 +83,8 @@ const MovieDetails = () => {
             </div>
             <h2>Additional information</h2>
             <div>
-              <NavLink to="cast">Cast</NavLink>
-              <NavLink to="reviews">Reviews</NavLink>
+              <NavLink to="cast"><Button>Cast</Button></NavLink>
+              <NavLink to="reviews"><Button>Reviews</Button></NavLink>
             </div>
             <div>
               <Suspense fallback={<Loader />}>

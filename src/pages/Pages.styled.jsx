@@ -21,3 +21,22 @@ export const TextError = styled.p`
   margin-bottom: 20px;
   margin-top: 20px;
 `;
+export const Button = styled.button`
+  display: inline-block;
+  width: 120px;
+  height: 48px;
+  border: 1px solid #eeaeca;
+  border-radius: 30px;
+  background-color: #94bbe9;
+  color: #fff;
+  font: inherit;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  font-size: 20px;
+  margin: 10px 0;
+
+  &:hover {
+    background-color: #eeaeca;
+    color: #fff;
+  }
+`

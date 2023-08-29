@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types';
+import { SearchFormButton } from '../SearchForm/SearchForm.styled';
 
-const Button = ({ btnName, onClick }) => {
+export const Button = ({ btnName, onClick }) => {
   return (
     <div>
-      <button onClick={onClick} type="button">
+      <SearchFormButton onClick={onClick} type="button">
         {btnName}
-      </button>
+      </SearchFormButton>
     </div>
   );
 };
-
-export default Button;
 
 Button.propTypes = {
   btnName: PropTypes.string.isRequired,
